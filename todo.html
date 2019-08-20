@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>project-01</title>
+
+   <!-- bootstrap file -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  
+
+   <!-- link to the css file -->
+   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+   <style>
+   body {
+     background-image: linear-gradient(120deg,#b1c7db83,#706b5d6b);
+   }
+   </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-image: linear-gradient(120deg,#e7a478a1,#ae7ae9e8);">
+        <a class="navbar-brand" href="home.html">ESSENTIAL DUTIES</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link" href="todo.html">TODO </a>
+            <a class="nav-item nav-link" href="news.html">NEWS </a>
+            <a class="nav-item nav-link" href="events.html">EVENTS </a>
+            <a class="nav-item nav-link" href="books.html">BOOKS </a>
+          </div>
+        </div>
+      </nav>
+  <!-- content start here -->
+
+  <div class="container">
+      <input type="text" class="txtb" id="myTodoList" placeholder="Add a task">
+      <div class="taskList" id="todoList">
+          <h3> Task to be done</h3>
+      </div>
+
+  </div>
+
+<!-- footerstart here -->
+   <nav class="navbar fixed-bottom navbar-light bg-light">
+      <a class="nav-item nav-link" href="https://github.com/pracharya2601/project-01-todo-news-events-books" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/54/GitHub_Logo.png" height="30px" width="110px"></a>
+      <img >
+   </nav>
+  <!-- boootstrap file  -->
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <!-- Firebase JavaScript Link -->
+  <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-app.js"></script>
+
+  <!-- JQuery -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <!-- js link -->
+  <script src="assets/js/app.js"></script>
+
+  <script>
+  $(".txtb").on("keyup",function(e){
+  //13  means enter button
+  if(e.keyCode == 13 && $(".txtb").val() != "")
+  {
+    var task = $("<div class='task'></div>").text($(".txtb").val());
+    var del = $("<i class='fas fa-trash-alt'></i>").click(function(){
+      var p = $(this).parent();
+      p.fadeOut(function(){
+        p.remove();
+      });
+    });
+    
+    var check = $("<i class='fas fa-check'></i>").click(function(){
+      var p = $(this).parent();
+      p.fadeOut(function(){
+        $(".taskList").append(p);
+        p.fadeIn();
+      });
+      $(this).remove();
+    });
+
+    task.append(del,check);
+    $(".taskList").append(task);
+      //to clear the input
+    $(".txtb").val("");
+  }
+});
+  </script>
+
+</body>
+</html>

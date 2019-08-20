@@ -1,0 +1,141 @@
+
+#container {
+    height: 720px;
+    width: 960px;
+    background-color: bisque;
+    
+}
+
+
+/* css for TODO start here */
+
+.list-value {
+display: block;
+background-color: blanchedalmond;
+margin: 2px;
+}
+
+
+.list-value {
+display: block;
+background-color: blanchedalmond;
+margin: 2px;
+}
+
+
+.txtb {
+margin-top:30px;
+width:100%;
+background: none;
+padding: 10px;
+outline:none;
+font-size:15px;
+}
+
+h3 {
+margin:10px 0;
+}
+
+.task {
+width:100%;
+background:rbga(255,255,255,0.5);
+padding:18px;
+margin: 6px 0;
+overflow:hidden;
+}
+
+.task i {
+float:right;
+margin-left:20px;
+cursor: pointer;
+
+} 
+
+/* CSS FOR TODO APP END HERE  */
+
+/* **************************************** */
+
+/* css for forms */
+
+.form-all {
+    margin-top:30px;
+    padding: 20px;
+}
+
+.my-input {
+    width: 90%;
+    height: 40px;
+    color: rgb(17, 70, 247);
+    border-radius: 10px;
+    border-bottom: 2px solid rgba(44, 30, 30, 0.466);
+    border-right: 2px solid rgba(44, 30, 30, 0.466);
+}
+.my-btn {
+    height: 40px;
+    width: 100px;
+    background-color: rgb(56, 201, 56);
+    border-radius: 10px;
+}
+
+/* css for news app */
+
+#searchNews {
+    background-color: blanchedalmond;
+    border-radius: 10px;
+}
+
+.res-news {
+    display: inline-block;
+    width: 338px;
+    background-color: lightcyan;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+}
+
+#searchNews div:last-child {
+    margin-bottom: 200px;
+}
+
+/* css for events */
+
+.res-event {
+    display: inline-block;
+    width: 338px;
+    background-color: rgb(189, 156, 241);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+}
+
+#eventTitle div:last-child {
+    margin-bottom: 200px;
+}
+
+/* css for books */
+
+.res-book {
+    display: inline-block;
+    width: 338px;
+    background-color: rgb(167, 157, 104);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+}
+
+#bookTitle div:last-child {
+    margin-bottom: 200px;
+}
+
+/* for button  */
+
+.btn-link:link, .btn-link:visited {
+    width: 180px;
+    background-color: #f44336;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+}
