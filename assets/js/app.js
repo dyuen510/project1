@@ -112,7 +112,7 @@ var Config = {
             var img = $('<img height="200px" width="140px">');
             img.attr('src', bookObs.imageLinks.thumbnail).attr('href',bookObs.previewLink);
   
-            var dBtn = $(`<a class="btn-link" target="_blank"><button> Buy a Ticket </button></a>`).text("Buy a Ticket");
+            var dBtn = $(`<a class="btn-link" target="_blank"><button> Buy a Book </button></a>`).text("Buy a Book");
             dBtn.attr("href", bookObs.previewLink);
   
             var res = $('<div class="res-book">').append(c, au, summary, img, dBtn);
@@ -186,10 +186,9 @@ var Config = {
   
       $('#btn-submitE').on('click', function () {
           event.preventDefault();
-          $("form").trigger("reset");
           var e = $('#search_events').val();
-          var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?&keyword=" + e + "&apikey=BnIV3w1sOWnMwpB1TzcGSJK7FDnDvCF7&limit=3"
-  
+          $("form").trigger("reset");
+          var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?&keyword=" + e + "&apikey=BnIV3w1sOWnMwpB1TzcGSJK7FDnDvCF7&limit=3";
           $.ajax({
               url: queryURL,
               method: "GET"
