@@ -1,19 +1,19 @@
 
-
-var Config = {
-    apiKey: "AIzaSyCzl7gPXLH1y22Jot8jlEdKo2uqBHJJUl0",
-    authDomain: "first-project-07-30-019.firebaseapp.com",
-    databaseURL: "https://first-project-07-30-019.firebaseio.com",
-    projectId: "first-project-07-30-019",
-    storageBucket: "",
-    messagingSenderId: "607289516969",
-    appId: "1:607289516969:web:24f3c9cfccfe9132"
-  };
-  
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDKdkoTwVdvMhHmfGeRBgaU2myzVruJ5eQ",
+      authDomain: "todoproject-4ae26.firebaseapp.com",
+      databaseURL: "https://todoproject-4ae26.firebaseio.com",
+      projectId: "todoproject-4ae26",
+      storageBucket: "todoproject-4ae26.appspot.com",
+      messagingSenderId: "1092289165926",
+      appId: "1:1092289165926:web:89fc248fa10f3ee2"
+    };
     // Initialize Firebase
-    firebase.initializeApp(Config)
+    firebase.initializeApp(firebaseConfig);
     const database = firebase.database()
-  
+
+    
   //TODO APP JA FILE STARTER>>>>>>>>>>>>>>>>>>
   
   // // Your web app's Firebase configuration
@@ -124,18 +124,18 @@ var Config = {
   
   //............................
   
-  
-  // news javascript file
-  
+
+  // Don't really need this since we aren't pushing it into the database.
+
   // push into the database 
-  $('#btn-submitN').on('click', function () {
-    event.preventDefault();
-    var v = $('#search_term').val();
-    firebase.database().ref().push({
-    usernews: v
-  }); 
+  // $('#btn-submitN').on('click', function () {
+  //   event.preventDefault();
+  //   var v = $('#search_term').val();
+  //   firebase.database().ref().push({
+  //   usernews: v
+  // }); 
   
-  });
+  // });
   
   // onclickevents for news
   $('#btn-submitN').on('click', function () {
@@ -144,8 +144,8 @@ var Config = {
     var v = $('#search_term').val();
   
     $("form").trigger("reset");
-  
-    var queryURL = "https://newsapi.org/v2/everything?q=" + v + "&from=2019-08-17&sortBy=publishedAt&apiKey=6b047ed35aeb429b884ca4788713b4d8";
+  8
+    var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q="+ v + "&api-key=pqTAhnco7pVR9FUqC09qgrNtbfwV1CZH";
   
     $.ajax({
   
@@ -154,17 +154,20 @@ var Config = {
   
     }).then(function (response) {
         console.log(response);
+        
   
-        for (var i = 0; i < 5; i++) {
-            var p = $('<h2>').text('Title: ' + response.articles[i].title);
+        for (var i = 0; i < 7; i++) {
+          console.log(response);
+
+          var p = $('<h5>').text('Title: ' + response.response.docs[i].headline.main);
             var img = $('<img height="200px" width="290px">');
-            img.attr('src', response.articles[i].urlToImage);
-            var c = $('<p class="des-item">').text(response.articles[i].description);
+            img.attr('src', 'https://static01.nyt.com/' + response.response.docs[i].multimedia[0].url);
+            var c = $('<p class="des-item">').text(response.response.docs[i].snippet);
   
             var dBtn = $(`<a class="btn-link" target="_blank"><button> For more Go to link </button></a>`).text("For more Go to link");
-            dBtn.attr("href", response.articles[i].url);
+            dBtn.attr("href", response.response.docs[i].web_url);
   
-            var newsList = $('<div class="res-news">').append(p, c, img, dBtn);
+            var newsList = $('<div class="res-news">').append(p, img, c, dBtn);
             $('#searchNews').prepend(newsList);
         }
   
@@ -173,19 +176,20 @@ var Config = {
   //.....................................
   
   
-  // events javascript from here
+  // button submit for events javascript (search)
   
-  $('#btn-submitE').on('click', function () {
-    event.preventDefault();
-    var e = $('#search_events').val();
-    firebase.database().ref().push({
-    userEvents: e
-  }); 
+  // $('#btn-submitE').on('click', function () {
+  //   event.preventDefault();
+  //   var e = $('#search_events').val();
+  //   firebase.database().ref().push({
+  //   userEvents: e
+  // }); 
   
-  });
+  // });
   
       $('#btn-submitE').on('click', function () {
           event.preventDefault();
+          // $("form").trigger("reset");
           var e = $('#search_events').val();
           $("form").trigger("reset");
           var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?&keyword=" + e + "&apikey=BnIV3w1sOWnMwpB1TzcGSJK7FDnDvCF7&limit=3";

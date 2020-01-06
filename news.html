@@ -27,6 +27,7 @@
           <a class="nav-item nav-link" href="news.html">NEWS </a>
           <a class="nav-item nav-link" href="events.html">EVENTS </a>
           <a class="nav-item nav-link" href="books.html">BOOKS </a>
+          <button class="nav-item" onclick="mainApp.logout();">logout</button>
         </div>
       </div>
     </nav>
@@ -49,8 +50,7 @@
 
 <!-- footerstart here -->
    <nav class="navbar fixed-bottom navbar-light bg-light">
-    <a class="nav-item nav-link" href="https://github.com/pracharya2601/project-01-todo-news-events-books" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/54/GitHub_Logo.png" height="30px" width="110px"></a>
-    <a class="nav-item nav-link" href="https://newsapi.org/" target="_blank">NEWS API</a>
+    <a class="nav-item nav-link" href="https://github.com/dyuen510/project1" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/54/GitHub_Logo.png" height="30px" width="110px"></a>
    </nav>
   <!-- boootstrap file  -->
    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -61,11 +61,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- firebase link -->
-    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-database.js"></script>
 
   <!-- js link -->
    <script src="assets/js/app.js"></script>
+  <script src='auth/main.js'></script>
+
 
 </body>
 </html>
