@@ -1,10 +1,11 @@
  // Your web app's Firebase configuration
+ 
   var fireBase = fireBase || firebase;
   var hasInit = false;
 
   var config = {
     apiKey: "AIzaSyDKdkoTwVdvMhHmfGeRBgaU2myzVruJ5eQ",
-    authDomain: "https://productivity-todolist.herokuapp.com",
+    authDomain: "todoproject-4ae26.firebaseapp.com",
     databaseURL: "https://todoproject-4ae26.firebaseio.com",
     projectId: "todoproject-4ae26",
     storageBucket: "todoproject-4ae26.appspot.com",
