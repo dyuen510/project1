@@ -18,6 +18,22 @@
     body {
       background-image: linear-gradient(120deg, #b1c7db83, #706b5d6b);
     }
+
+    li{
+      border: 2px solid darkslategray;
+      text-align:center;
+      width:450px;
+      border-radius:25px;
+      list-style-type:none;
+      padding:5px;
+      margin:10px;
+      background-color:white;
+    }
+
+    .taskList{
+      max-height:490px;
+      overflow-y: auto;
+    }
   </style>
 
 </head>
@@ -25,7 +41,7 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-light"
     style="background-image: linear-gradient(120deg,#e7a478a1,#ae7ae9e8);">
-    <a class="navbar-brand" href="home.html">ESSENTIAL DUTIES</a>
+    <a class="navbar-brand" href="home.html">Task App</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
       aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -36,7 +52,7 @@
         <a class="nav-item nav-link" href="news.html">NEWS </a>
         <a class="nav-item nav-link" href="events.html">EVENTS </a>
         <a class="nav-item nav-link" href="books.html">BOOKS </a>
-        <button class="nav-item" onclick="mainApp.logout();">logout</button>
+        <a class = 'nav-item nav-link' onclick ='mainApp.logout();'>Sign Out</a>
       </div>
     </div>
   </nav>
@@ -48,9 +64,7 @@
     <h3> Task to be done</h3>
     <div class="taskList" id="todoList">
     </div>
-    <div class='task' id='todoOutput'></div>
 
-  </div>
 
   <!-- footerstart here -->
   <nav class="navbar fixed-bottom navbar-light bg-light">
@@ -97,22 +111,21 @@
       //13  means enter button
       if (e.keyCode == 13 && $(".txtb").val() != "") {
         // console.log($(".txtb").val())
-        // var firebaseRef = firebase.database();
         var task = $("<div class='task'></div>").text($(".txtb").val());
-        var del = $("<i class='fas fa-trash-alt'></i>").click(function () {
-          var p = $(this).parent();
-          p.fadeOut(function () {
-            p.remove();
-          });
-        });
+        // var del = $("<i class='fas fa-trash-alt'></i>").click(function () {
+          // var p = $(this).parent();
+          // p.fadeOut(function () {
+            // p.remove();
+          // });
+        // });
 
         var check = $("<i class='fas fa-check'></i>").click(function () {
-          var p = $(this).parent();
-          p.fadeOut(function () {
-            $(".taskList").append(p);
-            p.fadeIn();
-          });
-          $(this).remove();
+        //   var p = $(this).parent();
+        //   p.fadeOut(function () {
+        //     $(".taskList").append(p);
+        //     p.fadeIn();
+        //   });
+        //   $(this).remove();
           firebase.database().ref().remove($('.txtb').val());
         });
 
@@ -139,9 +152,7 @@
                 console.log('non matched')
               }
             })
-
           })
-
         })
 
         var items = $('.txtb').val();

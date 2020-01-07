@@ -6,17 +6,11 @@
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <title>project-01</title>
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-   <!-- link to the css file for header and footer -->
-   <!-- <link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
-   <!-- link to the css file for home content -->
-   <!-- <link rel="stylesheet" type="text/css" href="assets/css/home.css"> -->
-   <!-- google authentation file -->
-   <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
-   <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase-auth.js"></script>
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-light" style="background-image: linear-gradient(120deg,#53a0e7d3,#8d8c428c);">
-        <a class="navbar-brand" href="home.html">ESSENTIAL DUTIES</a>
+        <a class="navbar-brand" href="home.html">Task App</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -26,15 +20,19 @@
             <a class="nav-item nav-link" href="news.html">NEWS </a>
             <a class="nav-item nav-link" href="events.html">EVENTS </a>
             <a class="nav-item nav-link" href="books.html">BOOKS </a>
-            <button class="nav-item" onclick="mainApp.logout();">logout</button>
+            <a class = 'nav-item nav-link' onclick ='mainApp.logout();'>Sign Out</a>
           </div>
         </div>
       </nav>
-<h1>home</h1>
+<!-- <h1>home</h1> -->
 <!-- footerstart here -->
    <nav class="navbar fixed-bottom navbar-light bg-light">
       <a class="nav-item nav-link" href="https://github.com/dyuen510/project1" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/54/GitHub_Logo.png" height="30px" width="110px"></a>
    </nav>
+  <!-- firebase -->
+  <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-database.js"></script>
   <!-- boootstrap file  -->
    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
