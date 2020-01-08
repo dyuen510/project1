@@ -6,6 +6,42 @@
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <title>project-01</title>
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   <style>
+   #introTitle{
+     text-align:center;
+   }
+
+   #introduction{
+     text-align:center;
+   }
+   .carousel-inner img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .carousel-caption {
+            position: absolute;
+            top: 40%;
+            transform: translateY(-50%);
+        }
+
+        .carousel-caption h1 {
+            font-size: 500%;
+            /* text-transform: uppercase; */
+            text-shadow: 1px 1px 15px black;
+        }
+
+        .carousel-item {
+            height: 600px;
+        }
+
+        .carousel-indicators li {
+            border-radius: 12px;
+            width: 12px;
+            height: 12px;
+            background-color: #404040;
+        }
+   </style>
 </head>
 
 <body>
@@ -24,7 +60,44 @@
           </div>
         </div>
       </nav>
-<!-- <h1>home</h1> -->
+<h1 id = 'introTitle'>Welcome to Task App</h1>
+<hr>
+<div id='slides' class='carousel slide' data-ride='carousel'>
+  <ul class='carousel-indicators'>
+      <li data-target='#slides' data-slide-to='0' class='active'></li>
+      <li data-target='#slides' data-slide-to='1'></li>
+      <li data-target='#slides' data-slide-to='2'></li>
+      <li data-target='#slides' data-slide-to='3'></li>
+
+  </ul>
+  <div class='carousel-inner'>
+      <div class='carousel-item active'>
+          <img src='assets/images/todo.jpg'>
+          <div class='carousel-caption'>
+              <h1 class='display-2' id='todoListTitle'>Todo List Feature</h1>
+          </div>
+      </div>
+      <div class='carousel-item'>
+          <img src='assets/images/news.jpg'>
+          <div class='carousel-caption'>
+              <h3 class='display-2' id='educ1'>News Search</h3>
+          </div>
+      </div>
+      <div class='carousel-item'>
+        <img src='assets/images/events.jpg'>
+          <div class='carousel-caption'>
+              <p class='display-2' id='educ2'>Events Search</p>
+          </div>
+      </div>
+      <div class='carousel-item'>
+        <img src='assets/images/books.jpg'>
+        <div class='carousel-caption'>
+            <p class='display-2' id='educ2'>Book Search</p>
+        </div>
+    </div>
+  </div>
+
+</div>
 <!-- footerstart here -->
    <nav class="navbar fixed-bottom navbar-light bg-light">
       <a class="nav-item nav-link" href="https://github.com/dyuen510/project1" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/54/GitHub_Logo.png" height="30px" width="110px"></a>

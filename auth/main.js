@@ -46,30 +46,6 @@ if (authData) {
 }
 });
 
-//**********/
-//using the if statement to check if the user already exists, but still working on it and not yet complete.
-// $('#userTodo').push(firebase.database().ref(user. uid));
-// var gatherUser = function(){
-//   firebase.auth().onAuthStateChanged(function(user){
-// //     // console.log(user.uid)
-//     $('#userTodo').push(firebase.database().ref(user.uid));
-
-
-// // //     var firebaseRef = firebase.database().ref(user.uid);
-// // //     // console.log(firebase.database().ref(user.uid))
-// // //     console.log(firebaseRef);
-// // //     if(firebaseRef != user.uid){
-// // //       firebase.database().ref(user.uid);
-// // //     }else{
-// // //       console.log("didn't add.")
-// // //     }
-// // //     // firebaseRef.push().set(user.uid);
-//   })
-// }
-
-
-
-// gatherUser();
 
 init();
 
