@@ -37,3 +37,5 @@ Users are also able to search up events by keyword. For the events we used the t
 </div>
 
 For the book search we used the google books api. User is able to search for a specific book which would return the title, author, short description and a purchase link.
+
+Deployed link : https://productivity-todolist.herokuapp.com/
