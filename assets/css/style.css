@@ -139,3 +139,11 @@ cursor: pointer;
     display: block;
     margin-top: 10px;
 }
+
+#weatherInfo{
+    text-align:center;
+    margin-left: -50px;
+    margin-right:-50px;
+    max-height:400px;
+    overflow-y: auto;
+}

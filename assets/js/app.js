@@ -26,18 +26,21 @@ $('#btn-sub').on('click', function(){
     method: "GET"
   }).then(function (response) {
     console.log(response);
-    let city = response.data.city;
-    let state = response.data.state;
-    let time = response.data.current.weather.ts;
-    let temp = response.data.current.weather.tp;
-    let pressure = response.data.current.weather.pr;
-    let humidity = response.data.current.weather.hu;
-    let windspeed = response.data.current.weather.ws;
-    let windDirection = response.data.current.weather.wd;
+    // var p = $('<h5>').text('Title: ' + response.response.docs[i].headline.main);
+
+    let city = $('<h3>').text('City: ' +response.data.city);
+    let state = $('<h4>').text('State: ' + response.data.state);
+    let time = $('<h5>').text('Date: ' + response.data.current.weather.ts);
+    let temp = $('<p>').text('temperature in celcius: ' + response.data.current.weather.tp + '°');
+    let pressure = $('<p>').text('pressure: ' + response.data.current.weather.pr);
+    let humidity = $('<p>').text('humidity: ' + response.data.current.weather.hu);
+    let windspeed = $('<p>').text('wind speed: ' + response.data.current.weather.ws);
+    let windDirection = $('<p>').text('Direction of the wind: ' + response.data.current.weather.wd);
+    //weathericon 
     let weatherIcon = response.data.current.weather.ic;
     // console.log(city, state, time, temp, pressure, humidity, windspeed, windDirection, weatherIcon)
 
-    var weatherDisplay = $('<div class="weatherStat">').append(city, state, time, temp, pressure, humidity, windspeed, windDirection, weatherIcon);
+    var weatherDisplay = $('<div class="weatherStat">').append(city, state, time, temp, pressure, humidity, windspeed, windDirection);
     $('#weatherInfo').prepend(weatherDisplay);
 })
 })
