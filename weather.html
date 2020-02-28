@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>project-01</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- link to the css file -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <style>
+        body {
+            background-image: url('assets/images/weather.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position-y: center;
+            background-position-x: calc(50%);
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light"
+    style="background-image: linear-gradient(120deg,#f34242cb,#e0cf6de8);">
+    <a class="navbar-brand" href="home.html">Task App</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ml-auto">
+        <a class="nav-item nav-link" href="todo.html">TODO </a>
+        <a class="nav-item nav-link" href="news.html">NEWS </a>
+        <a class="nav-item nav-link" href="events.html">EVENTS </a>
+        <a class="nav-item nav-link" href="books.html">BOOKS </a>
+        <a class="nav-item nav-link" href="weather.html">WEATHER </a>
+        <a class = 'nav-item nav-link' onclick ='mainApp.logout();'>Sign Out</a>
+      </div>
+    </div>
+  </nav>
+</body>
+
+</html>
