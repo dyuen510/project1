@@ -27,20 +27,22 @@ $('#btn-sub').on('click', function(){
   }).then(function (response) {
     console.log(response);
     // var p = $('<h5>').text('Title: ' + response.response.docs[i].headline.main);
-
+    let farenheit = (response.data.current.weather.tp * 9/5) + 32;
     let city = $('<h3>').text('City: ' +response.data.city);
     let state = $('<h4>').text('State: ' + response.data.state);
     let time = $('<h5>').text('Date: ' + response.data.current.weather.ts);
     let temp = $('<p>').text('temperature in celcius: ' + response.data.current.weather.tp + '°');
+    let fTemp = $('<p>').text('temperature in farenheit: ' + farenheit + '°');
     let pressure = $('<p>').text('pressure: ' + response.data.current.weather.pr);
     let humidity = $('<p>').text('humidity: ' + response.data.current.weather.hu);
     let windspeed = $('<p>').text('wind speed: ' + response.data.current.weather.ws);
     let windDirection = $('<p>').text('Direction of the wind: ' + response.data.current.weather.wd);
     //weathericon 
     let weatherIcon = response.data.current.weather.ic;
+    //maybe a weathericon here?
     // console.log(city, state, time, temp, pressure, humidity, windspeed, windDirection, weatherIcon)
 
-    var weatherDisplay = $('<div class="weatherStat">').append(city, state, time, temp, pressure, humidity, windspeed, windDirection);
+    let weatherDisplay = $('<div class="weatherStat">').append(city, state, time, temp, fTemp, pressure, humidity, windspeed, windDirection);
     $('#weatherInfo').prepend(weatherDisplay);
 })
 })
