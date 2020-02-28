@@ -43,4 +43,4 @@ For the book search we used the google books api. User is able to search for a s
 </div>
 Added another feature to the project, which allows the user to see the weather conditions by searching up any cities in California. 
 
-Deployed link : https://productivity-todolist.herokuapp.com/
+Deployed link : https://task-app-project.herokuapp.com/
