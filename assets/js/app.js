@@ -29,7 +29,8 @@ $('#btn-sub').on('click', function(){
     let farenheit = (response.data.current.weather.tp * 9/5) + 32;
     let city = $('<h3>').text('City: ' +response.data.city);
     let state = $('<h4>').text('State: ' + response.data.state);
-    let time = $('<h5>').text('Date: ' + response.data.current.weather.ts);
+    let testTime = new Date(response.data.current.weather.ts);
+    let time = $('<h5>').text('Date: ' + testTime.toDateString());
     let temp = $('<p>').text('temperature in celcius: ' + response.data.current.weather.tp + '°');
     let fTemp = $('<p>').text('temperature in farenheit: ' + farenheit + '°');
     let pressure = $('<p>').text('pressure: ' + response.data.current.weather.pr);
@@ -39,10 +40,7 @@ $('#btn-sub').on('click', function(){
     //weathericon 
     let weatherIcon = response.data.current.weather.ic; // returns "01n" | images are 01n.png
 
-    // var img = $('<img height="200px" width="290px">');
-    // img.attr('src', 'https://static01.nyt.com/' + response.response.docs[i].multimedia[0].url);
     let img = $('<img height = "50px" width = "50px">');
-    // let testingImg = img.attr('src', 'assets/images/01d.png');
     //maybe a weathericon here?
     if(weatherIcon == '01d'){
       weatherIcon = img.attr('src', 'assets/images/01d.png');
