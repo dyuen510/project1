@@ -1,4 +1,3 @@
-t
 // Your web app's Firebase configuration
 var firebaseConfig = {
   apiKey: "AIzaSyDKdkoTwVdvMhHmfGeRBgaU2myzVruJ5eQ",
@@ -13,6 +12,35 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const database = firebase.database()
 
+
+$('#btn-sub').on('click', function(){
+  event.preventDefault();
+  var city = $('#weatherStats').val();
+
+  $("form").trigger("reset");
+  var queryURL = 'https://api.airvisual.com/v2/city?city=' + city + '&state=California&country=USA&key=f7634abb-5081-4c74-abc6-475fcfe3cc60'
+  // var queryURL = 'api.airvisual.com/v2/city?city=' + city + '&state=California&country=USA&key=f7634abb-5081-4c74-abc6-475fcfe3cc60';
+  
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function (response) {
+    console.log(response);
+    let city = response.data.city;
+    let state = response.data.state;
+    let time = response.data.current.weather.ts;
+    let temp = response.data.current.weather.tp;
+    let pressure = response.data.current.weather.pr;
+    let humidity = response.data.current.weather.hu;
+    let windspeed = response.data.current.weather.ws;
+    let windDirection = response.data.current.weather.wd;
+    let weatherIcon = response.data.current.weather.ic;
+    // console.log(city, state, time, temp, pressure, humidity, windspeed, windDirection, weatherIcon)
+
+    var weatherDisplay = $('<div class="weatherStat">').append(city, state, time, temp, pressure, humidity, windspeed, windDirection, weatherIcon);
+    $('#weatherInfo').prepend(weatherDisplay);
+})
+})
 //button on click events for google books api
 
 $('#btn-submit').on('click', function () {
