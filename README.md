@@ -38,4 +38,9 @@ Users are also able to search up events by keyword. For the events we used the t
 
 For the book search we used the google books api. User is able to search for a specific book which would return the title, author, short description and a purchase link.
 
+<div align="center">
+    <img src="assets/images/weather.png" width="400px"</img> 
+</div>
+Added another feature to the project, which allows the user to see the weather conditions by searching up any cities in California. 
+
 Deployed link : https://productivity-todolist.herokuapp.com/
