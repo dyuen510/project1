@@ -26,7 +26,6 @@ $('#btn-sub').on('click', function(){
     method: "GET"
   }).then(function (response) {
     console.log(response);
-    // var p = $('<h5>').text('Title: ' + response.response.docs[i].headline.main);
     let farenheit = (response.data.current.weather.tp * 9/5) + 32;
     let city = $('<h3>').text('City: ' +response.data.city);
     let state = $('<h4>').text('State: ' + response.data.state);
@@ -38,11 +37,41 @@ $('#btn-sub').on('click', function(){
     let windspeed = $('<p>').text('wind speed: ' + response.data.current.weather.ws);
     let windDirection = $('<p>').text('Direction of the wind: ' + response.data.current.weather.wd);
     //weathericon 
-    let weatherIcon = response.data.current.weather.ic;
+    let weatherIcon = response.data.current.weather.ic; // returns "01n" | images are 01n.png
+
+    // var img = $('<img height="200px" width="290px">');
+    // img.attr('src', 'https://static01.nyt.com/' + response.response.docs[i].multimedia[0].url);
+    let img = $('<img height = "50px" width = "50px">');
+    // let testingImg = img.attr('src', 'assets/images/01d.png');
     //maybe a weathericon here?
+    if(weatherIcon == '01d'){
+      weatherIcon = img.attr('src', 'assets/images/01d.png');
+    }else if (weatherIcon == '01n'){
+      weatherIcon = img.attr('src', 'assets/images/01n.png');
+    }else if (weatherIcon == '02d'){
+      weatherIcon = img.attr('src', 'assets/images/02d.png');
+    }else if (weatherIcon == '02n'){
+      weatherIcon = img.attr('src', 'assets/images/02n.png');
+    }else if (weatherIcon == '03d'){
+      weatherIcon = img.attr('src', 'assets/images/03d.png');
+    }else if (weatherIcon == '04n' || weatherIcon == '04d'){
+      weatherIcon = img.attr('src', 'assets/images/04n.png');
+    }else if (weatherIcon == '09d'){
+      weatherIcon = img.attr('src', 'assets/images/09d.png');
+    }else if (weatherIcon == '10d'){
+      weatherIcon = img.attr('src', 'assets/images/10d.png');
+    }else if (weatherIcon == '10n'){
+      weatherIcon = img.attr('src', 'assets/images/10n.png');
+    }else if (weatherIcon == '11d'){
+      weatherIcon = img.attr('src', 'assets/images/11d.png');
+    }else if (weatherIcon == '13d'){
+      weatherIcon = img.attr('src', 'assets/images/01n.png');
+    }else if (weatherIcon == '50d'){
+      weatherIcon = img.attr('src', 'assets/images/50d.png');
+    }
     // console.log(city, state, time, temp, pressure, humidity, windspeed, windDirection, weatherIcon)
 
-    let weatherDisplay = $('<div class="weatherStat">').append(city, state, time, temp, fTemp, pressure, humidity, windspeed, windDirection);
+    let weatherDisplay = $('<div class="weatherStat">').append(city, state, time, temp, fTemp, pressure, humidity, windspeed, windDirection, weatherIcon);
     $('#weatherInfo').prepend(weatherDisplay);
 })
 })
